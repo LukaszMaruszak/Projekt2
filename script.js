@@ -4,7 +4,7 @@ xhttp.onreadystatechange = function () {
         // Typical action to be performed when the document is ready:
         var studentObj = JSON.parse(xhttp.responseText);
         main(studentObj);
-        myFunction(studentObj);
+        //myFunction(studentObj);
         //console.log(studentObj);
     }
 };
