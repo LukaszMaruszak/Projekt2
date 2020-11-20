@@ -1,9 +1,11 @@
 var xhttp = new XMLHttpRequest();
+var daneZplikuJSON = [];
 xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         // Typical action to be performed when the document is ready:
         var studentObj = JSON.parse(xhttp.responseText);
-        main(studentObj);
+        daneZplikuJSON.push(studentObj);
+        //main(studentObj);
         //myFunction(studentObj);
         //console.log(studentObj);
     }
@@ -144,12 +146,12 @@ class Helper {
         return Array;
     }
 }
-/*
-function myFunction(studentObj){
+
+function myFunction(){
     //Function to show inforamtion on screen
     let info ='<b>Student list as read</b><br />';
     let obj = new Helper();
-    let studenci = obj.getStudentList([studentObj]);
+    let studenci = obj.getStudentList(daneZplikuJSON);
     for (let i = 0; i < studenci.length; i++){
         info = info + studenci[i].first_name + " " + studenci[i].last_name + '<br>';
         info = info + studenci[i].birth_date + '<br>';
@@ -166,7 +168,7 @@ function myFunction(studentObj){
     }
     document.getElementById("demo").innerHTML = info;
 }
-*/
+
 
 
 function main(studentObj) {
