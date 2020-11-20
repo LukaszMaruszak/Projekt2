@@ -3,4 +3,4 @@ Project prepared for 'WWW Techniques' classes. The web application will allow yo
 calculate their average grades or add a student to the database. 
 Information about students is saved in the JSON file. 
 The application will be expanded with a user interface in the future.
-https://lukaszmaruszak.github.io/Projekt2/
+
