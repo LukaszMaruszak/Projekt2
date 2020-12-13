@@ -4,9 +4,93 @@
     <meta charset="UTF-8">
     <title>Projekt2</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-<button>Dodaj studenta</button>
-<p id="demo"></p>
+<body onload="dodajOpcjeKurs()">
+
+<div class="header">
+    <h1>Zarządzaj studentami zapisanymi w twojej szkole</h1>
+</div>
+
+    <div class="flexbox-container">
+        <div class="display" id="display">
+            <p class="info">Tu wyświetlą się informacje.</p>
+        </div>
+        <div class="add">
+
+            <h2>Dodaj studenta</h2>
+
+            <form id="addStudentForm" class="form-field">
+                <label for="fname">Imię</label><br>
+                <input type="text" id="fname" name="fname" required><br>
+
+                <label for="fsurname">Nazwisko</label><br>
+                <input type="text" id="fsurname" name="fsurname" required><br>
+
+                <label for="fbirthday">Data urodzenia</label><br>
+                <input type="date" id="fbirthday" name="birthday" required><br>
+
+                <label for="fyear">Rok studiów</label><br>
+                <input type="number" class="year" id="fyear" min="1" max="10" step="1" value="1" required><br>
+
+                <input type="button" id="submit" value="Dodaj studenta" onclick="dodajStudenta()">
+            </form>
+        <div class="dodano" id="dodano"></div>
+
+        </div>
+        <div class="opctions">
+            <div class="opction opction-show_all">
+                <input type="button" id="Wyswietlwszystkichstudentow" value="Wyświetl wszystkich studentów" onclick="wyswietlWszystkichStudentow()">
+            </div>
+
+            <div class="opction">
+                <label for="coursetoshow">Wybierz kurs</label>
+                <select name="coursetoshow" id="coursetoshow" class="select">
+                    <!--Przedmioty studentów-->
+                </select>
+                <br>
+                <input type="button" value="Wyświetl studentów z kursu" onclick="wyswietlStudentowzKursu()">
+            </div>
+
+            <div class="opction">
+                <label for="student">Wybierz studenta</label>
+                <select name="student" id="student" class="select">
+                    <!--Lista studentów -->
+                </select>
+                <br>
+                <input type="button" value="Pokaz roczną średnia studenta" onclick="wswietlSredniaRoczna()">
+            </div>
+
+            <div class="opction">
+                <label for="studentsrednia">Wybierz studenta</label>
+                <select name="studentsrednia" id="studentsrednia" class="select">
+                    <!--Lista studentów -->
+                </select>
+                <br>
+                <input type="button" value="Pokaz średnia studenta" onclick="wswietlSrednia()">
+            </div>
+
+            <div class="opction">
+                <label for="coursesrednia">Wybierz kurs</label>
+                <select name="course" id="coursesrednia" class="select">
+                    <!--Przedmioty studentów-->
+                </select>
+                <br>
+                <input type="button" value="Pokaż średnią ocen kursu" onclick="wswietlSredniaKursu()">
+            </div>
+        </div>
+    </div>
+
+
+<div class="footer">
+    <p>Strona prezentuje wykonany Projekt nr2. Aplikacja służy do zarządzania studentami zapisanymi na uczelni.
+    Użytkownik może wyświetlić zapisanych studentów, dodać nowego studenta podając jego imię i nazwisko, datę urodzenia oraz rok studiów.
+    Dostępny jest również szereg dodatkowych opcji jak: wyświetlenie średniej rocznej lub średniej policzonej
+    na podstawie ocen z całych studiów, wyświetlenie studentów zapisanych na dany przedmiot oraz policzenie średniej ocen danego przedmiotu.
+        Interfejs graficzny składa się z trzech kolumn, pierwsza wyświetla informacje, na kolejnej można dodać studenta, trzecia oferuje dodatkowe opcje.</p>
+</div>
+
 </body>
 </html>
